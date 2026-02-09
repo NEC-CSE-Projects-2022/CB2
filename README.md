@@ -2,22 +2,22 @@
 # Team Number – Project Title
 
 ## Team Info
-- 22471A05I0 — **Namburi Teja** ( [LinkedIn](https://www.linkedin.com/in/teja-namburi-b05b85282/) )
+- 22471A05I0 — **Namburi Teja** ( [Teja](https://www.linkedin.com/in/teja-namburi-b05b85282/) )
 _Work Done: Model Development, Backend & Web Integration
 
-- 22471A05G5 — **Kopparapu Siva Hemanth Kumar** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+- 22471A05G5 — **Kopparapu Siva Hemanth Kumar** ( [Hemanth](https://www.linkedin.com/in/kopparapu-siva-hemanth-kumar-6ba649276?utm_source=share_via&utm_content=profile&utm_medium=member_android) )
 _Work Done: Dataset Processing & Feature Engineering
 
-- 22471A05F8 — **Jalukuri Gopi** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+- 22471A05F8 — **Jalukuri Gopi** ( [Gopi](https://www.linkedin.com/in/jalukurigopi3591?utm_source=share_via&utm_content=profile&utm_medium=member_android) )
 _Work Done: Model Evaluation & Performance Analysis
 
-- 22471A05K6 — **Vipparla Chetan** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+- 22471A05K6 — **Vipparla Chetan** ( [Chetan](https://www.linkedin.com/in/chetan-vipparla-b737382b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) )
 _Work Done: Documentation & Research Analysis
 
 ---
 
 ## Abstract
-—During the age of high-speed digital advancement,
+During the age of high-speed digital advancement,
 cyber threats increase not merely in numbers but also in com
 plexity, threatening contemporary networks significantly. This
 article presents an optimized hybrid deep learning approach
@@ -40,17 +40,17 @@ smart cities, and critical infrastructure networks.
 ---
 
 ## Paper Reference (Inspiration)
-👉 **[Paper Title Enhanced Hybrid Deep Learning Model for
+👉 **[Enhanced Hybrid Deep Learning Model for
 Cybersecurity Threat Detection Using
 CNN-BiLSTM and Feature Optimization
-  – Author Names 1. Rajendran Satheeskumar
+ ](https://www.sciencedirect.com/science/article/pii/S2772918424000419)**
+Original conference/IEEE paper used as inspiration for the model.
+– Author Names
+  1. Rajendran Satheeskumar
   2. Namburi Teja
   3. Kopparapu Siva Hemanth Kumar
   4. Jalukuri Gopi
   5. Vipparla Chetan
- ](https://www.sciencedirect.com/science/article/pii/S2772918424000419)**
-Original conference/IEEE paper used as inspiration for the model.
-
 ---
 
 ## Our Improvement Over Existing Paper
@@ -263,7 +263,7 @@ OR
 ---
 
 ## Dataset Used
-👉 **[Dataset Name](https://www.kaggle.com/datasets/chethuhn/network-intrusion-dataset)**
+👉 **[CICIDS2017 Data Set](https://www.kaggle.com/datasets/chethuhn/network-intrusion-dataset)**
 
 **Dataset Details:**
 📊 Dataset Description – CICIDS2017
