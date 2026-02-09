@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 style="color: var(--accent-2);">Methodology</h1>
+
+<p>
+    The proposed system introduces a <strong>hybrid deep learning–based Intrusion Detection System (IDS)</strong>
+    designed to accurately identify cyber threats in modern network environments. The methodology integrates
+    <strong>data preprocessing, feature optimization, and a CNN–BiLSTM hybrid model</strong> to effectively capture
+    both spatial and temporal patterns present in network traffic.
+</p>
+
+<hr>
+
+<h3 style="color: var(--accent);">1. Dataset Description</h3>
+<p>
+    The experiments are conducted using the <strong>CICIDS2017 dataset</strong>, a widely recognized benchmark
+    created by the Canadian Institute for Cybersecurity. This dataset simulates real-world network traffic and
+    contains both benign and malicious activities collected over five consecutive days.
+</p>
+
+<p><strong>Attack categories included:</strong></p>
+<ul>
+    <li>DoS and DDoS attacks (Hulk, GoldenEye, Slowloris, SlowHTTPTest)</li>
+    <li>Brute Force attacks (SSH and FTP)</li>
+    <li>Port Scanning</li>
+    <li>Botnet activity</li>
+    <li>Web-based attacks (SQL Injection, XSS, Command Injection)</li>
+    <li>Infiltration attacks</li>
+</ul>
+
+<p>
+    Each network flow is represented by more than <strong>80 statistical and time-based features</strong>,
+    extracted using the CICFlowMeter tool. These features include flow duration, packet statistics,
+    inter-arrival times, header information, active/idle times, and flag-based metrics, making the dataset
+    suitable for intrusion detection research.
+</p>
+
+<hr>
+
+<h3 style="color: var(--accent);">2. Data Preprocessing</h3>
+<p>
+    Raw network traffic data often contains noise and inconsistencies that can negatively impact model
+    performance. To ensure reliable learning, the following preprocessing steps are applied:
+</p>
+
+<ul>
+    <li>
+        <strong>Handling missing and infinite values:</strong>
+        All records containing NaN, infinite, or undefined values are removed.
+    </li>
+    <li>
+        <strong>Dropping irrelevant attributes:</strong>
+        Non-informative fields such as source IP address, destination IP address, and timestamps are eliminated.
+    </li>
+    <li>
+        <strong>Label encoding:</strong>
+        Categorical attack labels are converted into numerical form for model compatibility.
+    </li>
+    <li>
+        <strong>Feature normalization:</strong>
+        Numerical features are standardized using <strong>z-score normalization</strong> to maintain uniform scale
+        and improve convergence during training.
+    </li>
+</ul>
+
+<hr>
+
+<h3 style="color: var(--accent);">3. Feature Selection Using PCA</h3>
+<p>
+    To reduce dimensionality and eliminate redundant information, <strong>Principal Component Analysis (PCA)</strong>
+    is applied to the preprocessed dataset. PCA transforms the original high-dimensional feature space into a
+    smaller set of principal components while preserving most of the variance.
+</p>
+
+<p>
+    This process reduces the feature set from over 80 attributes to approximately
+    <strong>30 optimized components</strong>, significantly improving:
+</p>
+
+<ul>
+    <li>Computational efficiency</li>
+    <li>Training speed</li>
+    <li>Generalization capability</li>
+    <li>Resistance to overfitting</li>
+</ul>
+
+<hr>
+
+<h3 style="color: var(--accent);">4. Data Reshaping</h3>
+<p>
+    After feature optimization, the dataset is reshaped to meet the input requirements of the deep learning
+    model. Since the CNN component expects three-dimensional input, the optimized feature vectors are converted
+    from 2D to 3D format. This enables the convolutional layers to effectively scan feature patterns across the
+    input space.
+</p>
+
+<hr>
+
+<h3 style="color: var(--accent);">5. Hybrid CNN–BiLSTM Model Architecture</h3>
+<p>
+    The core of the proposed system is a <strong>hybrid CNN–BiLSTM architecture</strong> designed to capture both
+    spatial and temporal characteristics of network traffic.
+</p>
+
+<h4 style="color: var(--accent-2);">Convolutional Neural Network (CNN)</h4>
+<ul>
+    <li>Extracts local and spatial patterns from network flow features</li>
+    <li>Identifies short-term variations in packet behavior and traffic intensity</li>
+    <li>Includes pooling layers to reduce dimensionality</li>
+    <li>Uses dropout layers to prevent overfitting</li>
+</ul>
+
+<h4 style="color: var(--accent-2);">Bidirectional Long Short-Term Memory (BiLSTM)</h4>
+<ul>
+    <li>Processes sequential data in both forward and backward directions</li>
+    <li>Captures long-range temporal dependencies in network traffic</li>
+    <li>Enhances detection of attacks that evolve over time</li>
+</ul>
+
+<p>
+    The output from the BiLSTM layer is passed to a <strong>fully connected dense layer</strong>,
+    which aggregates learned representations for classification.
+</p>
+
+<hr>
+
+<h3 style="color: var(--accent);">6. Classification and Prediction</h3>
+<p>
+    In the final stage, a <strong>Softmax activation function</strong> is applied to generate probability scores
+    for each class. Based on these probabilities, the model classifies network traffic as either
+    <strong>normal (benign)</strong> or <strong>malicious (attack)</strong>.
+</p>
+
+<p>
+    This probabilistic approach ensures accurate, interpretable, and reliable intrusion detection suitable
+    for real-time environments.
+</p>
+
+<hr>
+
+<h3 style="color: var(--accent);">7. Overall Workflow</h3>
+<ul>
+    <li>Raw network traffic collection</li>
+    <li>Data cleaning and normalization</li>
+    <li>Label encoding</li>
+    <li>PCA-based feature reduction</li>
+    <li>Data reshaping</li>
+    <li>CNN–BiLSTM hybrid learning</li>
+    <li>Final attack or normal traffic prediction</li>
+</ul>
+
+<hr>
+
+<h3 style="color: var(--accent);">Summary</h3>
+<p>
+    By combining <strong>PCA for feature optimization</strong> with a
+    <strong>CNN–BiLSTM hybrid architecture</strong>, the proposed methodology achieves high detection accuracy
+    while maintaining computational efficiency. This makes the system suitable for deployment in
+    <strong>real-time cybersecurity applications</strong>, including industrial IoT, smart cities,
+    and critical infrastructure networks.
+</p>
+
+{% endblock %}

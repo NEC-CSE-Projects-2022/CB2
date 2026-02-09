@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- PAGE TITLE SECTION -->
+<section style="margin-bottom: 2.5rem;">
+    <h3 class="page-title" style="
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: .75rem;
+    ">
+        Enhanced Hybrid Deep Learning Model for Cybersecurity Threat Detection
+        Using <span style="color: var(--accent-2);">CNN-BiLSTM</span> and
+        <span style="color: var(--accent);">Feature Optimization</span>
+    </h3>
+
+    <p class="lead page-subtitle" style="max-width: 900px;">
+        A high-performance intrusion detection framework leveraging
+        Principal Component Analysis (PCA) and hybrid deep learning
+        architectures to detect sophisticated cyber threats with
+        high accuracy and low false alarm rates.
+    </p>
+</section>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-card">
+    <h2 style="margin-top:0;">CICIDS Detector</h2>
+
+    <p class="lead">
+        Real-time threat detection using PCA + CNN + BiLSTM —
+        high accuracy, low false alarms, designed for deployment
+        in critical systems.
+    </p>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+      <a class="btn btn-primary" href="{{ url_for('upload') }}">
+        Upload Traffic
+      </a>
+      <a class="btn btn-outline" href="{{ url_for('methodology') }}">
+        Methodology
+      </a>
+    </div>
+
+    <div style="margin-top:1.25rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap;">
+      <span class="badge-feature">CICIDS2017</span>
+      <span class="badge-feature">PCA</span>
+      <span class="badge-feature">CNN-BiLSTM</span>
+      <span class="badge-feature">Real-time</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <h5>Model Status</h5>
+      <p class="kv">
+        Accuracy <strong style="color:var(--accent-2)">98.2%</strong>
+        — False Alarm Rate
+        <strong style="color:var(--accent)">1.1%</strong>
+      </p>
+
+      <div style="height:12px"></div>
+
+      <div class="chart-wrap">
+        <p style="margin:0;color:var(--muted)">
+            Placeholder for training/validation graphs or confusion matrix.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

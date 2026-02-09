@@ -1,0 +1,249 @@
+
+:root{
+  --bg: #0f1724;              /* dark navy */
+  --card: #0b1220;            /* darker card */
+  --muted: #93a3b8;
+  --accent: #00b894;          /* teal/green accent */
+  --accent-2: #2dd4bf;        /* lighter accent */
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --text: #e6eef7;
+  --glass-border: rgba(255,255,255,0.06);
+  --shadow: 0 8px 30px rgba(2,6,23,0.6);
+  --radius: 12px;
+  --max-width: 1100px;
+  --transition: 250ms cubic-bezier(.2,.9,.3,1);
+  --mono: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  --ui: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Page background and typography */
+html,body{
+  height:100%;
+  margin:0;
+  font-family: var(--ui);
+  background: linear-gradient(180deg, #081022 0%, var(--bg) 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Container override to keep content centered and consistent */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left:1rem;
+  padding-right:1rem;
+}
+
+/* NAVBAR tweaks (works with your Bootstrap markup) */
+.navbar {
+  background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(6,10,18,0.85));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 18px rgba(2,6,23,0.45);
+}
+.navbar-brand { 
+  font-weight:700;
+  letter-spacing:0.4px;
+  color: var(--accent-2) !important;
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+}
+.navbar .nav-link {
+  color: var(--muted) !important;
+  transition: color var(--transition);
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--text) !important;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 3.2rem 0;
+}
+@media(min-width:880px){
+  .hero { grid-template-columns: 1fr 420px; gap:2.5rem; }
+}
+.hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border-radius: calc(var(--radius) * 1.1);
+  padding: 2rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+}
+.hero h1 {
+  margin:0 0 .6rem 0;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height:1.05;
+  color: var(--text);
+}
+.card h4{
+  margin:0 0 .6rem 0;
+  /* font-size: clamp(1.6rem, 3.5vw, 2.6rem); */
+  line-height:1.05;
+  color: var(--text);
+}
+.hero p.lead {
+  margin:0 0 1.25rem 0;
+  color:var(--muted);
+  font-size:1rem;
+}
+
+/* CTA buttons */
+.btn-primary {
+  background: linear-gradient(90deg,var(--accent), var(--accent-2));
+  border: none;
+  color: #02111a;
+  font-weight:600;
+  padding: .6rem 1.05rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(12,53,44,0.16);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(12,53,44,0.22); }
+
+/* Secondary button */
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--muted);
+  padding: .55rem .9rem;
+  border-radius: 10px;
+  transition: background var(--transition), color var(--transition);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.02); color: var(--text); }
+
+/* Cards grid */
+.grid {
+  display:grid;
+  gap:1.25rem;
+  grid-template-columns: repeat(1,1fr);
+  margin-top:1.5rem;
+}
+@media(min-width:760px){ .grid { grid-template-columns: repeat(2,1fr); } }
+@media(min-width:1100px){ .grid { grid-template-columns: repeat(3,1fr); } }
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  border: 1px solid var(--glass-2);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 20px 36px rgba(2,6,23,0.55); }
+.card h5 { margin:0 0 .5rem 0; color:var(--text); }
+.card p { margin:0; color:var(--muted); font-size:.95rem; }
+
+.hero-card:hover {transform: translateY(-6px); box-shadow: 0 20px 36px rgba(2,6,23,0.55);  }
+/* Small feature badges */
+.badge-feature {
+  display:inline-block;
+  padding:.28rem .5rem;
+  background: rgba(0,0,0,0.35);
+  color:var(--accent-2);
+  border-radius: 999px;
+  font-size: .78rem;
+  margin-right:.35rem;
+}
+
+/* Tables (for showing sample features/metrics) */
+.table-custom {
+  width:100%;
+  border-collapse: collapse;
+  margin-top: .75rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.4);
+}
+.table-custom th, .table-custom td {
+  padding: .62rem .75rem;
+  text-align:left;
+  color: var(--muted);
+  font-size:.92rem;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.table-custom thead th {
+  color:var(--text);
+  background: rgba(255,255,255,0.02);
+  font-weight:600;
+}
+
+/* Confusion matrix / charts container */
+.chart-wrap {
+  padding: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 0;
+  color: var(--muted);
+  text-align:center;
+  border-top: 1px solid rgba(255,255,255,0.02);
+  margin-top: 3.2rem;
+}
+
+/* small util classes */
+.kv { color:var(--muted); font-size:.92rem; }
+.center { text-align:center; }
+
+/* CODE / MONOSPACED blocks for showing examples */
+pre.code {
+  background: #041018;
+  padding: .8rem;
+  border-radius: 8px;
+  overflow:auto;
+  font-family: var(--mono);
+  color: #9ad9d0;
+  font-size: .92rem;
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+/* forms */
+.form-card input[type="file"] {
+  display:block;
+  width:100%;
+}
+
+/* small responsive tweaks */
+@media(max-width:540px){
+  .hero { padding: 1.2rem 0; }
+  .container { padding-left: .75rem; padding-right:.75rem; }
+}
+.card h4 {
+  margin-bottom: .5rem;
+}
+/* Sticky footer layout */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+.site-footer {
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.25));
+}
+.page-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.page-subtitle {
+  max-width: 900px;
+}
